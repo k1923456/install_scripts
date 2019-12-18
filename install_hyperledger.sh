@@ -1,5 +1,7 @@
 #!/bin/bash
 
+USER=santai
+
 # Install Docker
 sudo apt-get update
 sudo apt-get install -y apt-transport-https ca-certificates curl gnupg-agent software-properties-common
@@ -9,8 +11,14 @@ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubun
 sudo apt-get update
 sudo apt-get install -y docker-ce docker-ce-cli containerd.io
 
+# Make docker don't need sudo
+sudo groupadd docker
+sudo gpasswd -a $USER docker
+
 bash ./install_go.sh
 
 bash ./install_node.sh
 
 sudo apt-get install -y python
+
+curl -sSL http://bit.ly/2ysbOFE | bash -s

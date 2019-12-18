@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Create ~/.nvm directory
+[ -d ~/.nvm ] || mkdir ~/.nvm
+
 sudo apt-get update 
 sudo apt-get install -y build-essential libssl-dev curl
 
@@ -8,6 +11,7 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | 
 
 source ~/.nvm/nvm.sh
 source ~/.nvm/bash_completion
+source ~/.bashrc
 
 # Install node 10.15.3
 nvm install 10.15.3
