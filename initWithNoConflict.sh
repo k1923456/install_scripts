@@ -22,7 +22,7 @@ echo "Commit 5" > File5
 git add File5
 git commit -m"Add Commit 5 in File5"
 
-git checkout -b "branch_fully_independent"
+git checkout -b "fully_independent"
 
 echo "Commit 6" > File6
 git add File6
@@ -45,13 +45,13 @@ git add File10
 git commit -m"Add Commit 10 in File10"
 
 git checkout "master"
-git checkout -b "branch_modify_no_conflict_File1_from_master"
+git checkout -b "modify_no_conflict_File1_in_master"
 echo "Commit 11" >> File1
 git add File1
 git commit -m"Add Commit 11 in File1"
 
-git checkout "branch_fully_independent"
-git checkout -b "branch_modify_no_conflict_File6_from_branch_fully_independent"
+git checkout "fully_independent"
+git checkout -b "modify_no_conflict_File6_in_fully_independent"
 echo "Commit 12" >> File6
 git add File6
 git commit -m"Add Commit 12 in File6"
